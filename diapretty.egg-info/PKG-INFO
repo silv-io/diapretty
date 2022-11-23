@@ -1,7 +1,0 @@
-Metadata-Version: 2.1
-Name: diapretty
-Version: 0.1.0
-Summary: diapretty - LocalStack diagnosis pretty printer
-Home-page: https://github.com/silv-io/diapretty
-Author: Silvio Vasiljevic
-Author-email: silvio.vasiljevic@localstack.cloud
