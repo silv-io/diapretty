@@ -3,9 +3,9 @@ import gzip
 import json
 from typing import Dict
 
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, PackageLoader
 
-env = Environment(loader=FileSystemLoader(searchpath="diapretty"), autoescape=True)
+env = Environment(loader=PackageLoader("diapretty", "templates"), autoescape=True)
 full = env.get_template("template.html.jinja2")
 
 
