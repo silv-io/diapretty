@@ -22,5 +22,7 @@ class PrettyDiagnosis:
 
     @property
     def full_html(self):
-        return full.render(diagnosis=self.diagnosis,
-                           creation_date=datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S"))
+        return full.render(
+            diagnosis=self.diagnosis,
+            creation_date=datetime.datetime.now().strftime("%m/%d/%Y, %H:%M:%S"),
+        )
