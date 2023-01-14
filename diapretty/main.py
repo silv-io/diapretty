@@ -9,7 +9,7 @@ from diapretty.html import PrettyDiagnosis
 @click.command()
 @click.argument("diagnose_path")
 def main(diagnose_path):
-    diagnosis = PrettyDiagnosis(diagnose_path)
+    diagnosis = PrettyDiagnosis.from_diagnose_file(diagnose_path)
 
     name: str
     with tempfile.NamedTemporaryFile(prefix="diagnosis_", suffix=".html", delete=False) as f:
