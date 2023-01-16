@@ -22,3 +22,8 @@ python -m diapretty.main /path/to/diagnose.json.gz
 ```
 
 Enjoy!
+
+# Develop
+
+Run `make install` to create a virtual environment and install developer dependencies.
+
