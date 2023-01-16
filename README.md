@@ -16,14 +16,28 @@ Just do `pip install -e .` in this directory
 
 # Usage
 
+## Read existing diagnostics report
+
 After installation, you can use diapretty like this:
 ```shell
 python -m diapretty.main /path/to/diagnose.json.gz
 ```
 
-Enjoy!
+## Start the server
+
+To access the diagnosis report of your currently running localstack instance, install the server extra:
+
+```shell
+pip install -e '.[server]'
+```
+
+and run
+```shell
+python -m diapretty.server
+```
+
+Then navigate to http://localhost:4567 in your browser.
 
 # Develop
 
 Run `make install` to create a virtual environment and install developer dependencies.
-

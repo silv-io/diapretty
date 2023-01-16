@@ -1,7 +1,7 @@
 import datetime
 import gzip
 import json
-from typing import Dict
+from typing import Dict, Optional
 
 from jinja2 import Environment, PackageLoader
 
@@ -12,13 +12,18 @@ full = env.get_template("template.html.jinja2")
 class PrettyDiagnosis:
     diagnosis: Dict[str, object]
 
-    def __init__(self, diagnosis_path: str):
+    def __init__(self, diagnosis: Dict[str, object]):
+        self.diagnosis = diagnosis
+
+    @staticmethod
+    def from_diagnose_file(diagnosis_path: str) -> Optional["PrettyDiagnosis"]:
         if diagnosis_path.endswith(".gz"):
             with gzip.open(diagnosis_path) as f:
-                self.diagnosis = json.load(f)
+                return PrettyDiagnosis(json.load(f))
         elif diagnosis_path.endswith(".json"):
             with open(diagnosis_path) as f:
-                self.diagnosis = json.load(f)
+                return PrettyDiagnosis(json.load(f))
+        return None
 
     @property
     def full_html(self):
